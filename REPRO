@@ -1,5 +1,7 @@
 # buck2 9d6afaf7f1ea3e92b5dc53f7a9efd386 <build-id>
 
+git clone https://github.com/facebookincubator/buck2-prelude.git prelude
+
 reindeer --third-party-dir third-party vendor
 reindeer --third-party-dir third-party buckify
 
