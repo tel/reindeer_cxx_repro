@@ -1,0 +1,5 @@
+# buck2 9d6afaf7f1ea3e92b5dc53f7a9efd386 <build-id>
+
+reindeer --third-party-dir third-party vendor
+reindeer --third-party-dir third-party buckify
+buck2 build //third-party:anyhow-1.0.83#check

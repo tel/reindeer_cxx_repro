@@ -1,0 +1,45 @@
+[workspace]
+
+[package]
+name = "rust-third-party"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "top"
+path = "top/main.rs"
+
+[dependencies]
+arrayvec = "0.7"
+arrow = "51.0"
+chrono = { version = "0.4", features = ["serde"] }
+chrono-tz = "0.9"
+console-subscriber = "0.2"
+criterion = "0.5"
+cxx = "1.0"
+cxx-build = "1.0"
+databento = "0.8"
+eyre = "0.6"
+futures = "0.3"
+glob = "0.3"
+indexmap = "2.0"
+indicatif = { version = "0.17", features = ["rayon"] }
+opentelemetry = "0.22"
+opentelemetry_sdk = "0.22"
+opentelemetry-otlp = "0.15"
+parquet = "51.0"
+pin-project = "1.1"
+rand = { version = "0.8", features = ["small_rng"] }
+rayon = "1.8"
+replace_with = "0.1.7"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+tokio = { version = "1.37", features = ["full", "tracing"] }
+tracing = "0.1"
+tracing-opentelemetry = "0.23"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+xflags = "0.3"
+
+[patch.crates-io]

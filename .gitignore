@@ -1,0 +1,4 @@
+buck-out
+prelude
+third-party/vendor
+third-party/BUCK
