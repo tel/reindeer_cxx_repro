@@ -2,4 +2,34 @@
 
 reindeer --third-party-dir third-party vendor
 reindeer --third-party-dir third-party buckify
-buck2 build //third-party:anyhow-1.0.83#check
+
+buck2 build //third-party:chrono#check
+
+# BUILD FAILED
+# Error evaluating build file: `root//third-party:BUCK`
+# 
+# Caused by:
+#     0: Traceback (most recent call last):
+#          * third-party/BUCK:2393, in <module>
+#              cargo.rust_library(
+#          * prelude/rust/cargo_package.bzl:113, in _cargo_rust_library
+#              native.rust_library(name = name, **kwargs)
+#          * prelude/native.bzl:421, in _rust_library_macro_stub
+#              rust_library(**kwargs)
+#          * prelude/rust/rust_library.bzl:912, in wrapper
+#              rust_library(**kwargs)
+#          * prelude/rust/rust_common.bzl:13, in rust_common_impl
+#              rust_rule(_workspaces = workspaces, **kwargs)
+#        error: Error coercing attribute `srcs` of `root//third-party:cxx-1.0.122`
+#          --> prelude/rust/rust_common.bzl:13:9
+#           |
+#        13 |         rust_rule(_workspaces = workspaces, **kwargs)
+#           |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#           |
+#        
+#     1: Error coercing attribute `srcs` of type `attrs.list(attrs.source(), default=[])`
+#     2: Error coercing ["vendor/cxx-1.0.122/src/c_char.rs", "vendor/cxx-1.0.122/src/cxx_string.rs", "vendor/cxx-1.0.122/src/cxx_vector.rs", "vendor/cxx-1.0.122/src/exception.rs", "vendor/cxx-1.0.122/src/extern_type.rs", "vendor/cxx-1.0.122/src/fmt.rs", "vendor/cxx-1.0.122/src/function.rs", "vendor/cxx-1.0.122/src/hash.rs", "vendor/cxx-1.0.122/src/lib.rs", "vendor/cxx-1.0.122/src/lossy.rs", "vendor/cxx-1.0.122/src/macros/assert.rs", "vendor/cxx-1.0.122/src/macros/mod.rs", "vendor/cxx-1.0.122/src/memory.rs", "vendor/cxx-1.0.122/src/opaque.rs", "vendor/cxx-1.0.122/src/result.rs", "vendor/cxx-1.0.122/src/rust_slice.rs", "vendor/cxx-1.0.122/src/rust_str.rs", "vendor/cxx-1.0.122/src/rust_string.rs", "vendor/cxx-1.0.122/src/rust_type.rs", "vendor/cxx-1.0.122/src/rust_vec.rs", "vendor/cxx-1.0.122/src/shared_ptr.rs", "vendor/cxx-1.0.122/src/sip.rs", "vendor/cxx-1.0.122/src/symbols/exception.rs", "vendor/cxx-1.0.122/src/symbols/mod.rs", "vendor/cxx-1.0.122/src/symbols/rust_slice.rs", "vendor/cxx-1.0.122/src/symbols/rust_str.rs", "vendor/cxx-1.0.122/src/symbols/rust_string.rs", "vendor/cxx-1.0.122/src/symbols/rust_vec.rs", "vendor/cxx-1.0.122/src/type_id.rs", "vendor/cxx-1.0.122/src/unique_ptr.rs", "vendor/cxx-1.0.122/src/unwind.rs", "vendor/cxx-1.0.122/src/vector.rs", "vendor/cxx-1.0.122/src/weak_ptr.rs"]
+#     3: Error coercing "vendor/cxx-1.0.122/src/c_char.rs"
+#     4: Couldn't coerce `vendor/cxx-1.0.122/src/c_char.rs` as a source.
+#          Error when treated as a target: Invalid absolute target pattern `vendor/cxx-1.0.122/src/c_char.rs` is not allowed: Expected a `:`, a trailing `/...` or the literal `...`.: Expected a `:`, a trailing `/...` or the literal `...`.: Expected a `:`, a trailing `/...` or the literal `...`.
+#          Error when treated as a path: Source file `vendor/cxx-1.0.122/src/c_char.rs` does not exist as a member of package `root//third-party`.
